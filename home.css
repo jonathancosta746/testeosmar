@@ -1,0 +1,780 @@
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+/*=============== HOME ===============*/
+.main {
+  display: grid;
+  grid-template-areas:  "formularios"
+                        "footer";
+  height: 98vh; 
+  justify-content: center;
+}
+
+
+/*================ VIDEO/IMAGEM ===============*/
+
+.midia {
+  display: none;
+  grid-area: midia;
+  padding: .03rem; 
+  box-sizing: border-box; 
+  overflow: hidden; 
+  position: relative; 
+  border-radius: 1.7rem;
+  padding-top: .4rem;
+}
+
+.midia video {
+  width: calc(100%); 
+  height: calc(100%); 
+  object-fit: cover; 
+  display: block;
+  border-radius: 1.7rem;
+}
+
+.midia img {
+  width: calc(100%); 
+  height: calc(100%); 
+  object-fit:contain; 
+  display: block;
+  border-radius: 1.7rem;
+}
+
+.midia h1 {
+  position: absolute; 
+  top: 35%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  color: rgb(255, 255, 255); 
+  font-size: 4rem; 
+  z-index: 3;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  user-select: none;
+}
+
+.orbe {
+  position: absolute;
+  bottom: 0; 
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); /* Gradiente de transparente para preto */
+  z-index: 2; 
+  border-radius: 1.7rem;
+
+}
+
+.dot{
+  color: #fd8f00;
+  font-size: 4rem!important;
+}
+
+
+/*================ FORMULARIOS ===============*/
+
+
+.formularios {
+  grid-area: formularios;
+  width: 20rem;
+  height: 100%; 
+  display: flex; /* Usa Flexbox para facilitar o alinhamento */
+  flex-direction: column;
+  justify-content: top; /* Alinha horizontalmente no centro */
+  align-items: center; /* Alinha verticalmente no centro */
+  padding-bottom: 4rem;
+}
+
+.logos {
+  display: flex; /* Usa Flexbox para alinhar as imagens */
+  justify-content: center; /* Centraliza as imagens horizontalmente */
+  align-items: center; /* Centraliza as imagens verticalmente */
+  gap: 3rem; /* Espaçamento entre as imagens */
+  padding-bottom: 3rem;
+  padding-top: 1rem;
+}
+
+.logos img {
+  width: 5rem; 
+  height: auto; 
+  max-height: 5rem; 
+  object-fit: contain; 
+}
+
+
+
+.cpf_cnpj {
+  display: flex; 
+  width: 100%; 
+  max-width: 22rem;
+  flex-direction: row; 
+  justify-content: center; 
+}
+
+
+.cpf_cnpj > form {
+  flex: 1; 
+  max-width: 22rem; 
+  padding: 0.5rem;
+  box-sizing: border-box; 
+}
+
+#CNPJs {
+  padding-right: 3rem;
+}
+
+/*================ FORMULARIO INPUT E IMAGEM ===============*/
+
+.input-container {
+  position: relative;
+}
+
+.input-container input {
+  width: 10.5rem;
+  height: 3rem;
+  padding: 1.2rem .5rem .5rem 1.2rem;
+  box-sizing: border-box;
+  border-radius: .8rem;
+  border: 1px solid #86868b; 
+  font-size: .9rem;
+  color: #131722;
+  transition: border-color 0.2s ease; 
+  
+}
+
+.input-container input:focus {
+  border: 1px solid #0f0fb6 !important; 
+}
+
+.input-container .floating-label {
+  position: absolute;
+  top: 50%;
+  left: 1.7rem;
+  transform: translateY(-50%);
+  background: transparent;
+  font-size: .8rem;
+  color: #86868b;
+  pointer-events: none;
+  transition: 0.2s ease all;
+  pointer-events: none;
+  border-radius: .8rem;
+
+}
+
+.input-container input:focus ~ .floating-label,
+.input-container input:not(:placeholder-shown) ~ .floating-label {
+  top: calc(50% - .7rem); 
+  font-size: .7rem;
+}
+
+
+.submit-img {
+  position: absolute; 
+  right: -.8rem; 
+  top: 50%;
+  transform: translateY(-50%); 
+  width: 1.5rem; 
+  height: 1.5rem; 
+  cursor: pointer; 
+  margin-right: 1.5rem;
+}
+
+
+.pesquisa{
+  width: 100%;
+  max-width: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.pesquisa .input-container input {
+  width: 22rem;
+  height: 5rem;
+  left: -1rem;
+  padding: 2.5rem .5rem .5rem 1rem;
+  font-size: .9rem;
+}
+
+.pesquisa .input-container .floating-label{
+  left: 1rem;
+}
+
+.divider{
+  width: 10rem; 
+  height: 1px; 
+  background-color: #d8d8dd; 
+  align-self: center; 
+  justify-self: center; 
+  margin: 4rem;
+}
+
+
+.btn_servidores{
+  border-radius: .8rem;
+  background-color: #32a160;
+  border: 2rem;
+  max-width: 22rem;
+  width: 22rem;
+}
+
+.btn_servidores:hover{
+  cursor: pointer;
+  background-color: #3cbe73;
+}
+
+.btn_servidores p{
+  color: white;
+}
+
+
+
+/*================ RODAPÉ ===============*/
+
+.footer {
+  grid-area: footer;
+  position: relative;
+  bottom: 0;
+  padding-bottom: 2rem;
+  text-align: center; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+}
+
+
+.footer a{
+  text-decoration: none;
+  color: #131722;
+  font-size: .7rem;
+}
+
+
+
+.footer_links {
+  display: flex;
+  flex-direction: column; 
+  gap: 1rem; 
+  padding-top: 2rem;
+  border-top: 1px solid #e0e3eb; 
+}
+
+
+/*================================================= BREAKPOINTS =================================================*/
+/* For horizontal view on mobile device*/
+
+
+@media screen and (min-width: 600px) {
+
+  /*================ VIDEO/IMAGEM ===============*/
+
+  .midia {
+    grid-area: midia;
+  }
+
+  
+  /*================ FORMULARIOS ===============*/
+    
+  .logos {
+    gap: 9vh; 
+    padding-bottom: 3rem;
+    padding-top: 2rem;
+  }
+  
+  .logos img {
+    width: 7rem; 
+    max-height: 7rem;
+    height: auto; 
+    object-fit: contain; 
+  }
+  
+  .cpf_cnpj {
+    max-width: 30rem;
+  }
+  
+  
+  .cpf_cnpj > form {
+    max-width: 30rem; 
+  }
+  
+  
+  
+  /*================ FORMULARIO INPUT E IMAGEM ===============*/
+  .input-container input {
+    width: 16rem;
+    padding: 1rem 1rem 1rem 1.4rem;
+    padding-bottom: .1rem;
+    font-size: .9rem;  
+    height: 3.5rem;
+  }
+  
+  
+  .input-container .floating-label {
+    left: 1.9rem;
+    top: 2.2rem;
+    font-size: .8rem;
+  }
+  
+  .input-container input:focus ~ .floating-label,
+  .input-container input:not(:placeholder-shown) ~ .floating-label {
+    top: calc(50% - 1rem); 
+    font-size: .7rem;
+  }
+  
+  
+  .submit-img {
+    right: .5rem; 
+    width: 1.7rem; 
+    height: 1.7rem; 
+    margin-right: .8rem;
+  }
+  
+    
+  .divider{
+    width: 17rem; 
+    margin: 3rem;
+  }
+  
+  
+  .btn_servidores{
+    border-radius: .8rem;
+    background-color: #32a160;
+    border: 2rem;
+    max-width: 32.8rem;
+    width: 60rem;
+    height: 2.5rem;
+    font-size: .8rem;
+  }
+  
+  
+  .pesquisa .input-container{
+    max-width: 32.8rem;
+    width: 60rem;
+    height: 2.5rem;
+  }
+
+   .input-container .floating-label {
+    left: 1.9rem;
+    top: 2.2rem;
+    font-size: .8rem;
+  }
+  
+  .pesquisa .input-container input{
+    width: 32.8rem;
+    padding-bottom: .5rem;
+    font-size: .9rem;
+    height: 4rem;
+    padding: 1.0rem .5rem .5rem 1.5rem;
+  }
+
+  
+  .pesquisa .input-container .floating-label{
+    left: 1.5rem;
+    top: 2rem;
+    padding-right: 2rem;
+  }
+
+  .pesquisa .input-container input:focus ~ .floating-label,
+.input-container input:not(:placeholder-shown) ~ .floating-label {
+  top: calc(50% - .3rem); 
+  font-size: .7rem;
+}
+
+  .pesquisa img{
+    padding-top: 1.5rem;
+  }
+
+  
+  
+  /*================ RODAPÉ ===============*/
+  
+  .footer {
+    padding-bottom: 2rem;
+  }
+  
+  
+  .footer a{
+    font-size: .7rem;
+  }
+}
+  
+
+/* For large devices */
+@media screen and (min-width: 1375px) {
+
+  .main {
+    display: grid;
+    grid-template-areas:  "midia formularios"
+                          "midia footer";
+    grid-template-columns: 1fr 1fr; 
+    height: 98vh; 
+  }
+  
+  
+/*================ VIDEO/IMAGEM ===============*/
+.midia{
+  display:grid;
+}
+
+.midia h1 {
+  display: block;
+  font-size: 3rem; 
+}
+
+/*================ FORMULARIOS ===============*/
+
+
+
+.logos {
+  gap: 9vh; 
+  padding-bottom: 3rem;
+  padding-top: 2rem;
+}
+
+.logos img {
+  width: 7rem; 
+  max-height: 7rem;
+  height: auto; 
+  object-fit: contain; 
+}
+
+.cpf_cnpj {
+  max-width: 30rem;
+}
+
+
+.cpf_cnpj > form {
+  max-width: 30rem; 
+}
+
+
+
+/*================ FORMULARIO INPUT E IMAGEM ===============*/
+.formularios{
+  width: 100%;
+}
+
+
+.input-container input {
+  width: 20.5rem;
+  padding: 1.4rem 1rem 1rem 1.4rem;
+  padding-bottom: .1rem;
+  font-size: .9rem;  
+  height: 3rem;
+}
+
+
+.input-container .floating-label {
+  left: 1.9rem;
+  font-size: .9rem;
+}
+
+.input-container input:focus ~ .floating-label,
+.input-container input:not(:placeholder-shown) ~ .floating-label {
+  top: calc(50% - .8rem); 
+  font-size: .7rem;
+}
+
+
+.submit-img {
+  right: .5rem; 
+  width: 1.7rem; 
+  height: 1.7rem; 
+  margin-right: .8rem;
+}
+
+
+
+.divider{
+  width: 17rem; 
+  margin: 3rem;
+}
+
+
+.btn_servidores{
+  border-radius: .8rem;
+  background-color: #32a160;
+  border: 2rem;
+  max-width: 42rem;
+  width: 60rem;
+  height: 2.5rem;
+  font-size: .7rem;
+}
+
+.pesquisa .input-container{
+  max-width: 41.5rem;
+  width: 41.5rem;
+  height: 2.5rem;
+}
+
+.pesquisa .input-container input{
+  width: 41.5rem;
+  font-size: .9rem;
+  height: 3.5rem;
+  padding: 2rem 3.5rem 0rem 1.2rem;
+}
+
+
+.pesquisa .input-container .floating-label{
+  left: 1.2rem;
+}
+
+
+
+
+/*================ RODAPÉ ===============*/
+
+
+.footer {
+  grid-area: footer;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  text-align: center; 
+  justify-content: center;
+  display: flex; 
+  flex-direction: row; 
+  align-items: center; 
+}
+
+
+.footer a{
+  text-decoration: none;
+  color: #131722;
+  font-size: .7rem;
+}
+
+
+
+.footer_links {
+  display: flex;
+  flex-direction: row; 
+  gap: 7rem; 
+  padding-top: 2rem;
+  border-top: 1px solid #e0e3eb; 
+  justify-content: center;
+  width: 100%;
+}
+}
+
+
+/* For full HD devices */
+@media screen and (min-width: 1890px) {
+/*=============== HOME ===============*/
+.main {
+  display: grid;
+  grid-template-areas:  "midia formularios"
+                        "midia footer";
+  grid-template-columns: 1fr 1fr; 
+  height: 98vh; 
+}
+
+
+/*================ VIDEO/IMAGEM ===============*/
+
+
+
+.midia h1 {
+  position: absolute; 
+  font-size: 4rem; 
+}
+
+.dot{
+  font-size: 4rem!important;
+}
+
+
+/*================ FORMULARIOS ===============*/
+
+
+.formularios {
+  grid-area: formularios;
+  width: 100%;
+  height: 100%; 
+  display: flex; /* Usa Flexbox para facilitar o alinhamento */
+  flex-direction: column;
+  justify-content: top; /* Alinha horizontalmente no centro */
+  align-items: center; /* Alinha verticalmente no centro */
+}
+
+.logos {
+  display: flex; /* Usa Flexbox para alinhar as imagens */
+  justify-content: center; /* Centraliza as imagens horizontalmente */
+  align-items: center; /* Centraliza as imagens verticalmente */
+  gap: 15vh; /* Espaçamento entre as imagens */
+  padding-bottom: 5rem;
+  padding-top: 2rem;
+}
+
+.logos img {
+  width: 7rem; 
+  height: auto; 
+  max-height: 7rem; 
+  object-fit: contain; 
+}
+
+.cpf_cnpj {
+  display: flex; 
+  width: 100%; 
+  max-width: 50rem;
+  flex-direction: row; 
+  justify-content: center; 
+}
+
+
+.cpf_cnpj > form {
+  flex: 1; 
+  max-width: 30rem; 
+  padding: 0.5rem;
+  box-sizing: border-box; 
+}
+
+/*================ FORMULARIO INPUT E IMAGEM ===============*/
+
+.input-container {
+  position: relative;
+  width: 100%;
+}
+
+.input-container input {
+  width: 100%;
+  height: 4rem;
+  padding: 1.5rem 1rem 1rem 1.85rem;
+  box-sizing: border-box;
+  border-radius: .8rem;
+  border: 1px solid #86868b; 
+  font-size: 1rem;
+  color: #131722;
+  transition: border-color 0.2s ease; 
+  
+}
+
+.input-container input:focus {
+  border: 1px solid #0f0fb6 !important; 
+}
+
+.input-container .floating-label {
+  position: absolute;
+  top: 50%;
+  left: 2.4rem;
+  transform: translateY(-50%);
+  background: transparent;
+  font-size: 1rem;
+  color: #86868b;
+  pointer-events: none;
+  transition: 0.2s ease all;
+  pointer-events: none;
+  border-radius: .8rem;
+
+}
+
+.input-container input:focus ~ .floating-label,
+.input-container input:not(:placeholder-shown) ~ .floating-label {
+  top: calc(50% - 1rem); 
+  font-size: .8rem;
+}
+
+
+.submit-img {
+  position: absolute; 
+  right: 0rem; 
+  top: 50%;
+  transform: translateY(-50%); 
+  width: 2rem; 
+  height: 2rem; 
+  cursor: pointer; 
+  margin-right: 1.5rem;
+}
+
+
+.pesquisa{
+  width: 100%;
+  max-width: 50rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pesquisa .input-container .floating-label{
+  left: 1.9rem;
+
+}
+
+.divider{
+  width: 20rem; 
+  height: 1px; 
+  background-color: #d8d8dd; 
+  align-self: center; 
+  justify-self: center; 
+  margin: 4rem;
+}
+
+
+.btn_servidores{
+  border-radius: .8rem;
+  height: 4rem;
+  background-color: #32a160;
+  border: 2rem;
+  max-width: 49.5rem;
+  width: 60rem;
+  font-size: 1rem;
+}
+
+
+.pesquisa .input-container{
+  max-width: 49rem;
+  width: 49rem;
+  height: 2.5rem;
+}
+
+.pesquisa .input-container input{
+  width: 49rem;
+  font-size: 1rem;
+  margin-top: -.0rem;
+  padding-left: 1.7rem;
+}
+
+.pesquisa .input-container .floating-label{
+  left: 1.9rem;
+}
+
+
+
+/*================ RODAPÉ ===============*/
+
+.footer {
+  grid-area: footer;
+  position: absolute;
+  bottom: 0;
+  right: 0; 
+  padding-bottom: 2rem;
+  text-align: center; 
+  display: flex; 
+  flex-direction: row; 
+  align-items: center; 
+  width: 50%
+}
+
+
+.footer a{
+  text-decoration: none;
+  color: #131722;
+  font-size: .9rem;
+}
+
+
+
+.footer_links {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  gap: 15vh; 
+  width: 100%;
+  padding-top: 2rem;
+  border-top: 1px solid #e0e3eb; 
+}
+}

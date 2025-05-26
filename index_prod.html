@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robô Osmar</title>
+    <link rel="stylesheet" href="./home.css">
+    <!--=============== BOXICONS ===============-->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>  
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/assets/robosvg.ico" type="image/png">
+
+</head>
+
+<body>
+    
+   
+    
+    <!--==================== HOME ====================-->
+    <main class="main">
+
+        <section class="midia">
+             <img src="./assets/conexao_lenta.png" alt="Robô Osmar">
+            <div class="orbe">
+                <h1>Robô Osmar<span class="dot">.</span></h1>
+            </div>
+        </section>
+
+
+        <section class="formularios">
+            <div class="logos">
+                <img src="./assets/gdf.png" alt="GDF">
+                <img src="./assets/CGDF.png" alt="CGDF">
+            </div>
+            <div class="cpf_cnpj">
+                <form class="input-container">
+                    <input id="CPF"  maxlength="14" name="CPF" type="tel" placeholder="" />
+                    <label for="input-field" class="floating-label">Consultar CPF</label>
+                    <img 
+                        src="./assets/right_arrow.png" 
+                        alt="Consultar CPF" 
+                        tabindex="3" 
+                        class="submit-img" 
+                        onclick="sendCPF();" 
+                        role="button" 
+                    />
+                </form>
+                <form class="input-container">
+                    <input id="CNPJ"  maxlength="18" name="CNPJ" type="tel" placeholder="" />
+                    <label for="CNPJ" class="floating-label">Consultar CNPJ</label>
+                    <img 
+                        src="./assets/right_arrow.png" 
+                        alt="Consultar CNPJ" 
+                        tabindex="3" 
+                        class="submit-img" 
+                        onclick="sendCNPJ();" 
+                        role="button" 
+                    />
+                </form>
+            </div>
+
+
+            <div class="pesquisa"> 
+                <span class="divider"></span>
+                
+                <button class="btn_servidores" onclick="sendPESQUISAR();" tabindex="3" type="button" value="Pesquisar Servidor pelo nome" id="consultar" >
+                    <p>
+                        Clique aqui para pesquisar um servidor pelo nome
+                    </p>
+                </button>
+
+                <span class="divider"></span>
+
+                <form class="input-container">
+                    <input id="CNPJs"  maxlength="5000" name="CNPJs" type="tel" placeholder="" />
+                    <label for="input-field" class="floating-label">Para pesquisar vínculos entre CNPJs, informar apenas números separados por vírgula</label>
+                    <img 
+                        src="./assets/right_arrow.png" 
+                        alt="consultar" 
+                        tabindex="3" 
+                        class="submit-img" 
+                        onclick="sendPESQUISARCNPJs();" 
+                        role="button" 
+                    />
+                </form>             
+            </div>
+        </section>
+
+
+        <section class="footer">
+            <div class="footer_links">
+                <a href="https://www.cg.df.gov.br/" target="_blank">CGDF - Controladoria Geral do Distrito Federal</a>
+                <a href="https://www.df.gov.br/" target="_blank">Governo do Distrito Federal</a>
+            </div>
+            
+        </section>
+ 
+    </main> 
+
+    <script>
+
+//############################################## Script botões #######################################################
+        
+        function sendCPF() {
+            var parametroCPF = document.getElementById('CPF').value.replace(/[^\d]+/g, "");
+            window.open('https://app.powerbi.com/groups/me/rdlreports/da5eab98-1c6d-4dbf-a2a6-2886ee74e357?rp:CPF_do_Servidor=' + parametroCPF, '&experience=power-bi');
+        }
+        
+        function sendCNPJ() {
+            var parametroCNPJ = document.getElementById('CNPJ').value.replace(/[^\d]+/g, "");
+            window.open('https://sig.cg.df.gov.br/microstrategy/asp/Main.aspx?Server=CGDFSV029&Project=SIGRH&Port=0&evt=3069&src=Main.aspx.3069&executionMode=3&documentID=9CC9B2634E8D0A836540CEA065A9B422&valuePromptAnswers=' + parametroCNPJ, '_blank');
+        }
+        
+        function sendPESQUISAR() {
+            window.open('https://sig.cg.df.gov.br/microstrategy/asp/Main.aspx?Server=CGDFSV029&Project=SIGRH&Port=0&evt=3069&src=Main.aspx.3069&executionMode=3&documentID=B1B1E9034E32B9EC4F0BE1B5E8934DC9');
+        }
+        
+        function sendPESQUISARCNPJs() {
+            var parametroCNPJs = document.getElementById('CNPJs').value.replace(/[A-Z a-z /.]/g, '');
+            window.open('https://sig.cg.df.gov.br:443/MicroStrategy/asp/Main.aspx?evt=3140&src=Main.aspx.3140&documentID=72E19D59453C31A8880874AE49E682D8&Server=CGDFSV029&Project=SIGRH&Port=0&share=1&valuePromptAnswers=' + parametroCNPJs, '_blank');
+        }
+        </script>
+        
+        
+    </body>
+    </html>

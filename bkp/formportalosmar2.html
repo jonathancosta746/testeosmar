@@ -1,0 +1,256 @@
+<html>
+
+<head>
+    <title> Portal Osmar</title>
+    <style type="text/css">
+        body {
+            font-family: 'Arial', Helvetica, sans-serif;
+            font-size: 12px;
+        }
+        
+        .titleForm {
+            background-color: #0078B4;
+            color: #fff;
+            padding: 15px;
+            font-size: 135%;
+            font-weight: bold;
+        }
+        
+        input[type="button"] {
+            background-color: #0078B4;
+            border: none;
+            color: #fff;
+            padding: 10px;
+        }
+        
+		input[type="button2"] {
+            background-color: #3aad48;
+            border: none;
+            color: #fff;
+            padding: 10px;
+        }
+        
+        input[type="button"]:hover,
+        input[type="button"]:focus,
+        input[type="button"]:active {
+            background-color: #006698;
+        }
+        
+        .container {
+            max-width: 950px;
+            box-shadow: 2px 2px 2px 2px #ccc;
+            margin: 50px auto;
+            position: relative;
+            background-color: #fff;
+        }
+        
+
+        form {
+            padding: 30px 30px 15px 30px;
+        }
+        
+        .obs {
+            display: block;
+            text-align: center;
+            margin-top: -12px;
+            font-weight: bold;
+            color: #494949;
+        }
+        
+        input {
+            display: block;
+            width: 100%;
+        }
+        
+        input:not([type="button"]) {
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #e6e6e6;
+            margin: 3px 0 15px 0;
+            font-size: 110%;
+        }
+        
+        label {
+            color: #727376;
+        }
+        
+        span.pergunta2,
+        span.texto1,
+        span.observacao {
+            font-size: 125%;
+            margin: 0 18px;
+            display: block;
+            line-height: 1.5em;
+        }
+        
+
+        
+        .btn-modal {
+            background-color: #0078B4;
+            border: none;
+            color: #fff;
+            padding: 10px;
+            margin: 16px;
+            position: absolute;
+            cursor: pointer;
+            z-index: 2;
+        }
+        
+        .modal {
+            position: absolute;
+            width: 400px;
+            margin: -45px 0 0 120px;
+            box-shadow: 2px 2px 13px 1px #ccc;
+            border-radius: 2px;
+            color: #000;
+            padding: 20px;
+            cursor: default;
+            line-height: 1.4em;
+            background: #fff;
+            display: none
+        }
+        
+        .panel p {
+            margin-bottom: 0px;
+        }
+        
+        .btn-close {
+            float: right;
+            padding: 8px;
+            cursor: pointer;
+        }
+        
+        .panel h3 {
+            display: inline-block;
+            margin: 6px;
+        }
+        
+        .showModal {
+            display: block;
+            z-index: 3;
+        }
+        
+
+    </style>
+    <script>
+        function sendCPF() {
+            var parametroCPF = document.getElementById('CPF').value.replace(/[^\d]+/g, "");
+
+            window.open('https://sig.cg.df.gov.br/microstrategy/asp/Main.aspx?Server=CGDFSV029&Project=SIGRH&Port=0&evt=3069&src=Main.aspx.3069&executionMode=3&documentID=B1B1E9034E32B9EC4F0BE1B5E8934DC9&elementsPromptAnswers=CBA7B4A442DAF6ACB8B6039E31C3A822;CBA7B4A442DAF6ACB8B6039E31C3A822:' + parametroCPF, '_blank');
+        }
+          function sendCNPJ() {
+            var parametroCNPJ = document.getElementById('CNPJ').value.replace(/[^\d]+/g, "");
+
+            window.open('https://sig.cg.df.gov.br/microstrategy/asp/Main.aspx?Server=CGDFSV029&Project=SIGRH&Port=0&evt=3069&src=Main.aspx.3069&executionMode=3&documentID=9CC9B2634E8D0A836540CEA065A9B422&valuePromptAnswers=' + parametroCNPJ, '_blank');
+        }
+		function sendPESQUISAR() {
+            
+            window.open('https://sig.cg.df.gov.br/microstrategy/asp/Main.aspx?Server=CGDFSV029&Project=SIGRH&Port=0&evt=3069&src=Main.aspx.3069&executionMode=3&documentID=B1B1E9034E32B9EC4F0BE1B5E8934DC9');
+        }
+    </script>
+
+    <div class="PortalOsmar">
+        <!--<div class="titleForm">
+            Preencha os campos
+        </div>-->
+
+	
+	
+<table style="height: 450px; margin-left: auto; margin-right: auto;" width="850">
+   <tbody>
+      <tr>
+         <td style="width: 849;">
+            <table style="height: 76px; margin-left: auto; margin-right: auto;" width="718">
+               <tbody>
+                  <tr>
+                     <td style="width: 280px;">
+                        <table style="width: 100%; margin-left: auto; margin-right: auto;">
+                           <tbody>
+                              <tr>
+                                 <td align="center"><img style="width: 130px; height: 130px; border: 0;" src="cpf.png" alt="" /></td>
+                              </tr>
+                              <tr>
+                                 <td>
+                                    <div>
+                                       <form>
+                                          <label class="obs">Informe o CPF:</label>
+                                          <div class="cpf"><input id="CPF" tabindex="1" maxlength="14" name="CPF" type="tel" placeholder="CPF" /></div>
+                                          <input onclick="sendCPF();" tabindex="3" type="button" value="CONSULTAR CPF" id="consultar" />
+                                       </form>
+                                    </div>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </td>
+                     <td style="width: 239px;" align="center"><img style="width: 215; height: 350px; border: 0;" src="caveira.jpg" alt="" /></td>
+                     <td style="width: 280px;">
+                        <table style=" width: 100%; margin-left: auto; margin-right: auto;">
+                           <tbody>
+                              <tr>
+                                 <td align="center"><img style="width: 130px; height: 130px; border: 0;" src="cnpj.png" alt="" /></td>
+                              </tr>
+                              <tr>
+                                 <td>
+                                    <div>
+                                       <form>
+                                          <label class="obs">Informe o CNPJ:</label>
+                                          <div class="cpf"><input id="CNPJ" tabindex="1" maxlength="18" name="CNPJ" type="tel" placeholder="CNPJ" /></div>
+                                          <input onclick="sendCNPJ();" tabindex="3" type="button" value="CONSULTAR CNPJ" id="consultar" />
+                                       </form>
+                                    </div>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <td style="width: 849px;">
+            <div>
+               <form>
+                  <label class="obs">Se desejar fazer a consulta de um servidor e n&atilde;o souber o CPF &eacute; poss&iacute;vel realizar a pesquisa pelo nome:</label>
+                  <div class="cpf">&nbsp;</div>
+                  <input  onclick="sendPESQUISAR();" tabindex="3" type="button" value="PESQUISAR SERVIDOR" id="consultar" />
+               </form>
+            </div>
+         </td>
+      </tr>
+      <tr>
+         <td style="width: 777px;">
+            <table style="width: 100%; color:#4a4a4a; font-size: 105%">
+               <tbody>
+                  <tr>
+                     <td style="width: 100%;" align="center" colspan="2"><img style="width: 100%; height: 3px; border: 0;" src="fundocinza.png" alt="" /></td>
+                  </tr>
+                  <tr>
+                     <td style="width: 60%;">CGDF - Controladoria Geral do Distrito Federal</td>
+                     <td style="width: 40%; text-align: right;">GOVERNO DO DISTRITO FEDERAL</td>
+                  </tr>
+               </tbody>
+            </table>
+         </td>
+      </tr>
+   </tbody>
+</table>
+	
+	
+	
+	
+	
+
+			
+				
+		
+		
+    </div>
+    <div style="clear: both;"></div>
+    </div>
+    <!-- <script src="codigofonte-bar.js"></script>-->
+    </body>
+
+</html>
